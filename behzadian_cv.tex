@@ -1,10 +1,18 @@
 \documentclass[11pt,a4paper,sans]{moderncv}
 
-\moderncvstyle{classic}
+\moderncvicons{letters}
+\renewcommand*{\labelitemi}{\strut\textbullet}
+\moderncvstyle[nosymbols]{classic}
 \moderncvcolor{black}
 
 \usepackage[utf8]{inputenc}
+\usepackage{lmodern}
 \usepackage[scale=0.85]{geometry}
+\input{glyphtounicode}
+\pdfgentounicode=1
+\renewcommand*{\emailsymbol}{\textnormal{Email:}~}
+\renewcommand*{\homepagesymbol}{\textnormal{Website:}~}
+\renewcommand*{\labelitemi}{\strut\textcolor{color1}{\textbullet}}
 \renewcommand*{\titlestyle}[1]{{\small\textit{#1}}}
 \name{Bahram}{Behzadian}
 \title{Reinforcement Learning · Post-Training · Model-Based RL}
@@ -16,53 +24,55 @@
 \makecvtitle
 
 %------------------------------------------------------------
-\section{Research Statement}
+\section{Research Summary}
 I work on reinforcement learning and sequential decision-making. The through-line across my research is policy improvement when the model of the world or the evaluator is imperfect: robust MDPs when the dynamics are uncertain, and truncated or approximate evaluators when the reward signal is unreliable. My recent work studies policy improvement under verifier-style rewards, connecting to post-training and RL for reasoning models. Earlier work spans robust MDPs, learning under uncertainty, and partial observability. I am increasingly focused on model-based RL and reasoning systems that plan under imperfect models.
 
 %------------------------------------------------------------
 \section{Publications}
 
 \cvitem{}{%
-\textbf{UPI-TRM: Policy Improvement under Truncated Evaluators with Verifier-Style Rewards}.\newline
-\emph{ICLR 2026 RSI Workshop; NeurIPS 2026 (under review)}.\newline
+Bahram Behzadian, Brett Daley, Gopeshh Subbaraj, Houssam Nassif. UPI-TRM: Policy Improvement under Truncated Evaluators with Verifier-Style Rewards. \emph{ICLR 2026 RSI Workshop; NeurIPS 2026 (under review)}.\newline
 Decomposes finite-depth evaluator error into a Bellman residual and a truncation bias, propagated through a conservative policy improvement bound. Connects to RLVR and verifier design.
 }
 
 \cvitem{}{%
-\textbf{Fast Algorithms for $L_\infty$-Constrained S-Rectangular Robust MDPs}.\newline
-\emph{Neural Information Processing Systems (NeurIPS)}, 2021.\newline
+Bahram Behzadian, Marek Petrik, Chin Pang Ho. Fast Algorithms for L-infinity-Constrained S-Rectangular Robust MDPs. \emph{Neural Information Processing Systems (NeurIPS)}, 2021.\newline
 Scalable algorithms for robust policy computation under structured uncertainty.
 }
 
 \cvitem{}{%
-\textbf{Optimizing Percentile Criterion using Robust MDPs}.\newline
-\emph{International Conference on Artificial Intelligence and Statistics (AISTATS)}, 2021.\newline
+Bahram Behzadian, Reazul Hasan Russel, Marek Petrik, Chin Pang Ho. Optimizing Percentile Criterion using Robust MDPs. \emph{International Conference on Artificial Intelligence and Statistics (AISTATS)}, 2021.\newline
 Robust decision-making under risk-sensitive and quantile-based objectives.
 }
 
 \cvitem{}{%
-\textbf{Fast Feature Selection for Linear Value Function Approximation}.\newline
-\emph{International Conference on Automated Planning and Scheduling (ICAPS)}, 2019.\newline
+Bahram Behzadian, Soheil Gharatappeh, Marek Petrik. Fast Feature Selection for Linear Value Function Approximation. \emph{International Conference on Automated Planning and Scheduling (ICAPS)}, 2019.\newline
 Representation and feature selection for value-based reinforcement learning.
 }
 
 \cvitem{}{%
-\textbf{Monte Carlo Localization in Hand-Drawn Maps}.\newline
-\emph{IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)}, 2015.\newline
+Bahram Behzadian, Pratik Agarwal, Wolfram Burgard, Gian Diego Tipaldi. Monte Carlo Localization in Hand-Drawn Maps. \emph{IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)}, 2015.\newline
 State estimation under partial observability with noisy map representations.
 }
 
-\subsection{Workshops and Other Venues}
-
-\cvitem{}{\textbf{Optimizing Norm-Bounded Weighted Ambiguity Sets for Robust MDPs}. NeurIPS Workshop on Safety and Robustness in Decision-Making, 2019.}
-\cvitem{}{\textbf{Feature Selection by Singular Value Decomposition for Reinforcement Learning}. ICML Workshop on Prediction and Generative Modeling, 2018.}
-\cvitem{}{\textbf{Low-Rank Feature Selection for Reinforcement Learning}. ISAIM, 2018.}
-\cvitem{}{\textbf{Robot Navigation in Hand-Drawn Sketched Maps}. European Conference on Mobile Robotics (ECMR), 2015.}
+\cvitem{}{%
+Reazul Hasan Russel, Bahram Behzadian, Marek Petrik. Optimizing Norm-Bounded Weighted Ambiguity Sets for Robust MDPs. \emph{NeurIPS Workshop on Safety and Robustness in Decision-Making}, 2019.
+}
+\cvitem{}{%
+Bahram Behzadian, Marek Petrik. Feature Selection by Singular Value Decomposition for Reinforcement Learning. \emph{ICML Workshop on Prediction and Generative Modeling}, 2018.
+}
+\cvitem{}{%
+Bahram Behzadian, Marek Petrik. Low-Rank Feature Selection for Reinforcement Learning. \emph{ISAIM}, 2018.
+}
+\cvitem{}{%
+Federico Boniardi, Bahram Behzadian, Wolfram Burgard, Gian Diego Tipaldi. Robot Navigation in Hand-Drawn Sketched Maps. \emph{European Conference on Mobile Robotics (ECMR)}, 2015.
+}
 
 %------------------------------------------------------------
+\newpage
 \section{Experience}
 
-\cventry{2022--Present}{Research Scientist}{Meta}{Palo Alto, CA}{}{
+\cventry{2022--Present}{Research Scientist}{Meta}{Menlo Park, CA}{}{
 \begin{itemize}
 \item Build large-scale experimentation and evaluation infrastructure: metric correctness pipelines, anomaly and data-quality monitoring, and ML auditing for production systems.
 \item Design statistically grounded evaluation frameworks that surface when large-scale learning systems are unreliable, biased, or being gamed.
