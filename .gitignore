@@ -12,6 +12,7 @@
 *.pdfsync
 
 # Build files
+build/
 *.dvi
 *.ps
 
