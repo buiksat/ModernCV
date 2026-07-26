@@ -1,6 +1,7 @@
-\documentclass[11pt,a4paper,sans]{moderncv}
+\documentclass[11pt,letterpaper,sans]{moderncv}
 
 \moderncvicons{letters}
+% Use a standard bullet while the style initializes; MarVoSym is not required.
 \renewcommand*{\labelitemi}{\strut\textbullet}
 \moderncvstyle[nosymbols]{classic}
 \moderncvcolor{black}
@@ -12,79 +13,106 @@
 \pdfgentounicode=1
 \renewcommand*{\emailsymbol}{\textnormal{Email:}~}
 \renewcommand*{\homepagesymbol}{\textnormal{Website:}~}
+\renewcommand*{\linkedinsocialsymbol}{\textnormal{LinkedIn:}~}
 \renewcommand*{\labelitemi}{\strut\textcolor{color1}{\textbullet}}
 \renewcommand*{\titlestyle}[1]{{\small\textit{#1}}}
+
 \name{Bahram}{Behzadian}
-\title{Reinforcement Learning · Post-Training · Model-Based RL}
+\title{Reinforcement Learning \textbar{} Robust Decision-Making \textbar{} Post-Training}
 \address{Palo Alto, CA}{}
 \email{behzadian.bahram@gmail.com}
 \homepage{buiksat.github.io}
+\social[linkedin][www.linkedin.com/in/buiksat/]{buiksat}
+\extrainfo{\textnormal{Google Scholar:}~\href{https://scholar.google.com/citations?user=Kp27oZ0AAAAJ\&hl=en}{profile}\quad U.S. permanent resident}
+
+\AtEndPreamble{
+  \hypersetup{
+    pdfauthor={Bahram Behzadian},
+    pdftitle={Bahram Behzadian - Research Scientist CV},
+    pdfsubject={Reinforcement Learning, Robust Decision-Making, and Post-Training}
+  }
+}
 
 \begin{document}
 \makecvtitle
 
 %------------------------------------------------------------
-\section{Research Summary}
-I work on reinforcement learning and sequential decision-making. The through-line across my research is policy improvement when the model of the world or the evaluator is imperfect: robust MDPs when the dynamics are uncertain, and truncated or approximate evaluators when the reward signal is unreliable. My recent work studies policy improvement under verifier-style rewards, connecting to post-training and RL for reasoning models. Earlier work spans robust MDPs, learning under uncertainty, and partial observability. I am increasingly focused on model-based RL and reasoning systems that plan under imperfect models.
+\section{Research Profile}
+Research scientist studying policy improvement when the model of the world or the evaluator is imperfect. My work spans robust MDPs under uncertain dynamics and policy improvement under truncated verifier-style rewards, with applications to RL post-training and reasoning.
 
 %------------------------------------------------------------
-\section{Publications}
+\section{Research Highlights}
 
 \cvitem{}{%
-Bahram Behzadian, Brett Daley, Gopeshh Subbaraj, Houssam Nassif. UPI-TRM: Policy Improvement under Truncated Evaluators with Verifier-Style Rewards. \emph{ICLR 2026 RSI Workshop; NeurIPS 2026 (under review)}.\newline
-Decomposes finite-depth evaluator error into a Bellman residual and a truncation bias, propagated through a conservative policy improvement bound. Connects to RLVR and verifier design.
-}
-
-\cvitem{}{%
-Bahram Behzadian, Marek Petrik, Chin Pang Ho. Fast Algorithms for L-infinity-Constrained S-Rectangular Robust MDPs. \emph{Neural Information Processing Systems (NeurIPS)}, 2021.\newline
-Scalable algorithms for robust policy computation under structured uncertainty.
+\textbf{\href{https://openreview.net/pdf?id=rIzREKws05}{UPI-TRM: Policy Improvement under Truncated Evaluators with Verifier-Style Rewards}}\newline
+\emph{ICLR 2026 Workshop on AI with Recursive Self-Improvement}\newline
+Bahram Behzadian, Brett Daley, Gopeshh Subbaraj, Houssam Nassif\newline
+Derived finite-depth policy-improvement guarantees that separate Bellman residual from truncation bias, and studied verifier-style rewards in recursive reasoning models.
 }
 
 \cvitem{}{%
-Bahram Behzadian, Reazul Hasan Russel, Marek Petrik, Chin Pang Ho. Optimizing Percentile Criterion using Robust MDPs. \emph{International Conference on Artificial Intelligence and Statistics (AISTATS)}, 2021.\newline
-Robust decision-making under risk-sensitive and quantile-based objectives.
-}
-
-\cvitem{}{%
-Bahram Behzadian, Soheil Gharatappeh, Marek Petrik. Fast Feature Selection for Linear Value Function Approximation. \emph{International Conference on Automated Planning and Scheduling (ICAPS)}, 2019.\newline
-Representation and feature selection for value-based reinforcement learning.
-}
-
-\cvitem{}{%
-Bahram Behzadian, Pratik Agarwal, Wolfram Burgard, Gian Diego Tipaldi. Monte Carlo Localization in Hand-Drawn Maps. \emph{IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)}, 2015.\newline
-State estimation under partial observability with noisy map representations.
-}
-
-\cvitem{}{%
-Reazul Hasan Russel, Bahram Behzadian, Marek Petrik. Optimizing Norm-Bounded Weighted Ambiguity Sets for Robust MDPs. \emph{NeurIPS Workshop on Safety and Robustness in Decision-Making}, 2019.
-}
-\cvitem{}{%
-Bahram Behzadian, Marek Petrik. Feature Selection by Singular Value Decomposition for Reinforcement Learning. \emph{ICML Workshop on Prediction and Generative Modeling}, 2018.
-}
-\cvitem{}{%
-Bahram Behzadian, Marek Petrik. Low-Rank Feature Selection for Reinforcement Learning. \emph{ISAIM}, 2018.
-}
-\cvitem{}{%
-Federico Boniardi, Bahram Behzadian, Wolfram Burgard, Gian Diego Tipaldi. Robot Navigation in Hand-Drawn Sketched Maps. \emph{European Conference on Mobile Robotics (ECMR)}, 2015.
+\textbf{Robust and Risk-Sensitive Markov Decision Processes}\newline
+\emph{NeurIPS 2021 and AISTATS 2021}\newline
+Developed scalable algorithms for \(L_\infty\)-constrained S-rectangular robust MDPs and percentile criteria under model uncertainty.
 }
 
 %------------------------------------------------------------
-\newpage
 \section{Experience}
 
-\cventry{2022--Present}{Research Scientist}{Meta}{Menlo Park, CA}{}{
+\cventry{2022--Present}{Research Scientist}{Meta}{}{}{
 \begin{itemize}
-\item Build large-scale experimentation and evaluation infrastructure: metric correctness pipelines, anomaly and data-quality monitoring, and ML auditing for production systems.
-\item Design statistically grounded evaluation frameworks that surface when large-scale learning systems are unreliable, biased, or being gamed.
+\item Build production infrastructure for experiment-metric correctness, anomaly and data-quality monitoring, and ML auditing in large-scale ads experimentation.
+\item Develop statistical diagnostics for missing, delayed, stale, or inconsistent signals, translating failure analyses into monitoring and correctness safeguards.
 \end{itemize}
 }
 
 \cventry{2018}{AI Engineer Intern}{Envio, Inc.}{Dover, NH}{}{
 \begin{itemize}
-\item Learning-based methods for vehicle routing and scheduling as constrained sequential decision-making problems.
-\item Combinatorial planning and long-horizon trade-offs under execution uncertainty.
+\item Developed learning-based methods for vehicle routing and scheduling under operational constraints and uncertain execution.
 \end{itemize}
 }
+
+\newpage
+
+%------------------------------------------------------------
+\section{Selected Publications}
+
+\cvitem{}{%
+\textbf{UPI-TRM: Policy Improvement under Truncated Evaluators with Verifier-Style Rewards}\newline
+\textbf{Bahram Behzadian}, Brett Daley, Gopeshh Subbaraj, Houssam Nassif\newline
+\emph{ICLR 2026 Workshop on AI with Recursive Self-Improvement}\quad
+\href{https://openreview.net/pdf?id=rIzREKws05}{[Paper]}
+}
+
+\cvitem{}{%
+\textbf{Fast Algorithms for \(L_\infty\)-Constrained S-Rectangular Robust MDPs}\newline
+\textbf{Bahram Behzadian}, Marek Petrik, Chin Pang Ho\newline
+\emph{Conference on Neural Information Processing Systems (NeurIPS), 2021}\quad
+\href{https://buiksat.github.io/files/NIPS_2021.pdf}{[Paper]}
+}
+
+\cvitem{}{%
+\textbf{Optimizing Percentile Criterion using Robust MDPs}\newline
+\textbf{Bahram Behzadian}, Reazul Hasan Russel, Marek Petrik, Chin Pang Ho\newline
+\emph{International Conference on Artificial Intelligence and Statistics (AISTATS), 2021}\quad
+\href{https://buiksat.github.io/files/AISTATS_2021.pdf}{[Paper]}
+}
+
+\cvitem{}{%
+\textbf{Fast Feature Selection for Linear Value Function Approximation}\newline
+\textbf{Bahram Behzadian}, Soheil Gharatappeh, Marek Petrik\newline
+\emph{International Conference on Automated Planning and Scheduling (ICAPS), 2019}\quad
+\href{https://buiksat.github.io/files/ICAPS_2019.pdf}{[Paper]}
+}
+
+\cvitem{}{%
+\textbf{Monte Carlo Localization in Hand-Drawn Maps}\newline
+\textbf{Bahram Behzadian}, Pratik Agarwal, Wolfram Burgard, Gian Diego Tipaldi\newline
+\emph{IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2015}\quad
+\href{https://buiksat.github.io/files/IROS_2015.pdf}{[Paper]}
+}
+
+\cvitem{}{\textbf{Complete publication list:} \href{https://buiksat.github.io}{buiksat.github.io} and \href{https://scholar.google.com/citations?user=Kp27oZ0AAAAJ\&hl=en}{Google Scholar}}
 
 %------------------------------------------------------------
 \section{Education}
@@ -101,13 +129,13 @@ Thesis: \emph{Robot Localization under Partial Observability with Weak Maps}
 %------------------------------------------------------------
 \section{Honors and Fellowships}
 
-\cvitem{}{CEPS Graduate Fellowship, University of New Hampshire}
-\cvitem{}{Thesis and Dissertation Fellowship, Tampere University of Technology}
+\cvitem{}{CEPS Graduate Fellowship, University of New Hampshire\newline
+Thesis and Dissertation Fellowship, Tampere University of Technology}
 
 %------------------------------------------------------------
-\section{Skills}
+\section{Technical Skills}
 
-\cvitem{}{\textbf{Reinforcement Learning:} robust MDPs, learning under uncertainty, partial observability, model-based RL, planning, policy improvement under imperfect evaluators, verifier-style rewards and RLVR.}
-\cvitem{}{\textbf{Post-training:} DPO, PPO, GRPO, reward modeling, evaluation methodology.}
-\cvitem{}{\textbf{Engineering:} Python, PyTorch, large-scale experimentation and evaluation infrastructure.}
+\cvitem{}{\textbf{Research:} robust MDPs, policy improvement, model-based RL, partial observability, verifier-style rewards, RLVR.}
+\cvitem{}{\textbf{Post-training:} PPO, DPO, GRPO, reward modeling.}
+\cvitem{}{\textbf{Programming:} Python, PyTorch.}
 \end{document}
