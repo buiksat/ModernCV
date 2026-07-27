@@ -12,6 +12,7 @@
 *.pdfsync
 
 # Build files
+build/
 *.dvi
 *.ps
 
@@ -60,6 +61,8 @@
 *.backup
 *.bak
 *~
+
+.DS_Store
 
 # PDF output (optional - uncomment if you don't want to track PDFs)
 # *.pdf
