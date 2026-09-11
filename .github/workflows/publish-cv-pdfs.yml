@@ -41,3 +41,5 @@ jobs:
             git commit -m "Add compiled RS and RE CV PDFs"
             git push
           fi
+
+# This workflow keeps the tracked PDFs synchronized with the two LaTeX sources.
