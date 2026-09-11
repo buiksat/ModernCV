@@ -1,0 +1,43 @@
+name: Build CV PDFs
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/publish-cv-pdfs.yml'
+      - 'behzadian_cv_rs.tex'
+      - 'behzadian_cv_re.tex'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build Research Scientist CV
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: behzadian_cv_rs.tex
+          compiler: pdflatex
+
+      - name: Build Research Engineer CV
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: behzadian_cv_re.tex
+          compiler: pdflatex
+
+      - name: Commit compiled PDFs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add behzadian_cv_rs.pdf behzadian_cv_re.pdf
+          if git diff --cached --quiet; then
+            echo "PDFs are already up to date."
+          else
+            git commit -m "Add compiled RS and RE CV PDFs"
+            git push
+          fi
