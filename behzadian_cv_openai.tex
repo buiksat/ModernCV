@@ -1,0 +1,146 @@
+\documentclass[11pt,letterpaper,sans]{moderncv}
+
+\moderncvicons{letters}
+% Use a standard bullet while the style initializes; MarVoSym is not required.
+\renewcommand*{\labelitemi}{\strut\textbullet}
+\moderncvstyle[nosymbols]{classic}
+\moderncvcolor{black}
+
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[scale=0.85]{geometry}
+\input{glyphtounicode}
+\pdfgentounicode=1
+\renewcommand*{\emailsymbol}{\textnormal{Email:}~}
+\renewcommand*{\homepagesymbol}{\textnormal{Website:}~}
+\renewcommand*{\linkedinsocialsymbol}{\textnormal{LinkedIn:}~}
+\renewcommand*{\labelitemi}{\strut\textcolor{color1}{\textbullet}}
+\renewcommand*{\titlestyle}[1]{{\small\textit{#1}}}
+
+\name{Bahram}{Behzadian}
+\title{Reinforcement Learning \textbar{} Post-Training \textbar{} Evaluation}
+\address{Palo Alto, CA}{}
+\email{behzadian.bahram@gmail.com}
+\homepage{buiksat.github.io}
+\social[linkedin][www.linkedin.com/in/buiksat/]{buiksat}
+\extrainfo{\href{https://scholar.google.com/citations?user=Kp27oZ0AAAAJ\&hl=en}{Google Scholar}\quad\textbar{}\quad U.S. permanent resident}
+
+\AtEndPreamble{
+  \hypersetup{
+    pdfauthor={Bahram Behzadian},
+    pdftitle={Bahram Behzadian - Reinforcement Learning, Post-Training, and Evaluation},
+    pdfsubject={Reinforcement Learning, Post-Training, Evaluation, and Decision-Making}
+  }
+}
+
+\begin{document}
+\makecvtitle
+
+%------------------------------------------------------------
+\section{Profile}
+Research scientist with a Ph.D. in reinforcement learning studying policy improvement when the model or evaluator is imperfect. My work spans robust MDPs under model uncertainty, recurrent value evaluators with verifier-style feedback, and production experimentation systems for measurement correctness and reliability. Current interests include RL post-training, reasoning, long-horizon agents, and reliable tool-use decisions under uncertainty.
+
+%------------------------------------------------------------
+\section{Experience}
+
+\cventry{2022--Present}{Research Scientist}{Meta}{}{}{
+\begin{itemize}
+\item Build production systems for experiment-metric correctness and ML auditing in large-scale ads experimentation.
+\item Develop anomaly and data-quality monitoring together with statistical diagnostics for unreliable, biased, stale, or inconsistent signals.
+\item Translate failure analyses into monitoring and correctness safeguards for production experimentation systems.
+\end{itemize}
+}
+
+\cventry{2018}{AI Engineer Intern}{Envio, Inc.}{Dover, NH}{}{
+\begin{itemize}
+\item Developed learning-based methods for vehicle routing and scheduling under operational constraints and uncertain execution.
+\end{itemize}
+}
+
+%------------------------------------------------------------
+\section{Selected Research}
+
+\cvitem{}{%
+\textbf{Policy Improvement with Imperfect Evaluators}\newline
+\emph{Finite-Reference Error Bounds for Recurrent Value Evaluators in Policy Improvement (UPI-TRM); earlier version at ICLR 2026 Workshop on AI with Recursive Self-Improvement}\newline
+Co-developed finite-depth error bounds for recurrent value evaluators used in policy improvement without assuming recurrent convergence, separating endpoint discrepancy from Bellman-residual error. Connected centered advantage error to conservative policy-improvement bounds and evaluated the analysis on an exact finite MDP and a fixed Sudoku census.
+}
+
+\cvitem{}{%
+\textbf{Research-Scale Language-Model Post-Training}\newline
+Implemented PPO and DPO experiments on small language models for arithmetic tasks with exact-answer evaluation.
+}
+
+\cvitem{}{%
+\textbf{Robust and Risk-Sensitive Markov Decision Processes}\newline
+\emph{NeurIPS 2021 and AISTATS 2021}\newline
+Developed scalable algorithms for \(L_\infty\)-constrained S-rectangular robust MDPs and percentile criteria under model uncertainty.
+}
+
+%------------------------------------------------------------
+\section{Technical Skills}
+
+\cvitem{}{\textbf{Programming:} Python, PyTorch.}
+\cvitem{}{\textbf{Evaluation and experimentation:} experiment-metric correctness, statistical diagnostics, anomaly and data-quality monitoring, ML auditing.}
+\cvitem{}{\textbf{RL and post-training:} robust MDPs, policy improvement, research-scale PPO and DPO, verifier-style rewards and RL with verifiable rewards; working knowledge of GRPO and reward modeling.}
+\newpage
+
+%------------------------------------------------------------
+\section{Selected Publications}
+
+\cvitem{}{%
+\textbf{UPI-TRM: Policy Improvement under Truncated Evaluators with Verifier-Style Rewards}\newline
+\textbf{Bahram Behzadian}, Brett Daley, Gopeshh Subbaraj, Houssam Nassif\newline
+\emph{ICLR 2026 Workshop on AI with Recursive Self-Improvement}\quad
+\href{https://openreview.net/pdf?id=rIzREKws05}{[Paper]}
+}
+
+\cvitem{}{%
+\textbf{Fast Algorithms for \(L_\infty\)-Constrained S-Rectangular Robust MDPs}\newline
+\textbf{Bahram Behzadian}, Marek Petrik, Chin Pang Ho\newline
+\emph{Conference on Neural Information Processing Systems (NeurIPS), 2021}\quad
+\href{https://buiksat.github.io/files/NIPS_2021.pdf}{[Paper]}
+}
+
+\cvitem{}{%
+\textbf{Optimizing Percentile Criterion using Robust MDPs}\newline
+\textbf{Bahram Behzadian}, Reazul Hasan Russel, Marek Petrik, Chin Pang Ho\newline
+\emph{International Conference on Artificial Intelligence and Statistics (AISTATS), 2021}\quad
+\href{https://buiksat.github.io/files/AISTATS_2021.pdf}{[Paper]}
+}
+
+\cvitem{}{%
+\textbf{Fast Feature Selection for Linear Value Function Approximation}\newline
+\textbf{Bahram Behzadian}, Soheil Gharatappeh, Marek Petrik\newline
+\emph{International Conference on Automated Planning and Scheduling (ICAPS), 2019}\quad
+\href{https://buiksat.github.io/files/ICAPS_2019.pdf}{[Paper]}
+}
+
+\cvitem{}{%
+\textbf{Monte Carlo Localization in Hand-Drawn Maps}\newline
+\textbf{Bahram Behzadian}, Pratik Agarwal, Wolfram Burgard, Gian Diego Tipaldi\newline
+\emph{IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2015}\quad
+\href{https://buiksat.github.io/files/IROS_2015.pdf}{[Paper]}
+}
+
+\cvitem{}{\textbf{Complete publication list:} \href{https://buiksat.github.io/publications.html}{Publications page} \textbar{} \href{https://scholar.google.com/citations?user=Kp27oZ0AAAAJ\&hl=en}{Google Scholar}}
+
+%------------------------------------------------------------
+\section{Education}
+
+\cventry{2015--2022}{Ph.D. in Computer Science}{University of New Hampshire}{}{}{
+Dissertation: \emph{Efficient Data-Driven Robust Policies for Reinforcement Learning} (advisor: Marek Petrik).\newline
+M.S. in Computer Science awarded en route (2018). Thesis: \emph{Representation Learning for Reinforcement Learning via Singular Value Decomposition}.
+}
+
+\cventry{2010--2013}{M.S. in Machine Automation}{Tampere University}{}{}{
+Thesis: \emph{Robot Localization under Partial Observability with Weak Maps}
+}
+
+%------------------------------------------------------------
+\section{Honors and Fellowships}
+
+\cvitem{}{CEPS Graduate Fellowship, University of New Hampshire\newline
+Thesis and Dissertation Fellowship, Tampere University of Technology}
+
+\end{document}
