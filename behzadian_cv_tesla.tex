@@ -1,0 +1,164 @@
+\documentclass[11pt,letterpaper,sans]{moderncv}
+
+\moderncvicons{letters}
+\renewcommand*{\labelitemi}{\strut\textbullet}
+\moderncvstyle[nosymbols]{classic}
+\moderncvcolor{black}
+
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[scale=0.85]{geometry}
+\setlength{\hintscolumnwidth}{2.55cm}
+\input{glyphtounicode}
+\pdfgentounicode=1
+\renewcommand*{\emailsymbol}{\textnormal{Email:}~}
+\renewcommand*{\homepagesymbol}{\textnormal{Website:}~}
+\renewcommand*{\linkedinsocialsymbol}{\textnormal{LinkedIn:}~}
+\renewcommand*{\labelitemi}{\strut\textcolor{color1}{\textbullet}}
+\renewcommand*{\titlestyle}[1]{{\small\textit{#1}}}
+\renewcommand*{\cventry}[7][.25em]{%
+  \cvitem[#1]{#2}{%
+    {#3}%
+    \ifthenelse{\equal{#4}{}}{}{, {\slshape#4}}%
+    \ifthenelse{\equal{#5}{}}{}{, #5}%
+    \ifthenelse{\equal{#6}{}}{}{, #6}%
+    \strut%
+    \ifx&#7&%
+    \else{\newline{}\begin{minipage}[t]{\linewidth}\small#7\end{minipage}}\fi}}
+
+\name{Bahram Behzadian}{}
+\title{Reinforcement Learning Engineer \textbar{} Post-Training \textbar{} Agents \& Evaluation}
+\address{Palo Alto, CA}{}
+\email{behzadian.bahram@gmail.com}
+\homepage{buiksat.github.io}
+\social[linkedin][www.linkedin.com/in/buiksat/]{buiksat}
+\extrainfo{\href{https://scholar.google.com/citations?user=Kp27oZ0AAAAJ\&hl=en}{Google Scholar}\quad\textbar{}\quad U.S. permanent resident}
+
+\AtEndPreamble{
+  \hypersetup{
+    pdfauthor={Bahram Behzadian},
+    pdftitle={Bahram Behzadian - Reinforcement Learning and Post-Training},
+    pdfsubject={Reinforcement Learning, Post-Training, Agents, Evaluation, and Robotics}
+  }
+}
+
+\begin{document}
+\makecvtitle
+
+%------------------------------------------------------------
+\section{Profile}
+Research scientist with a Ph.D. in reinforcement learning and 10+ years across RL, robotics, and production experimentation. Research spans robust decision-making, policy improvement under imperfect evaluators, and verifier-based rewards, with hands-on PPO/DPO experiments on small language models. At Meta, I build production measurement-correctness and ML-auditing systems. Python/PyTorch; prior mobile-robot localization and navigation research.
+
+%------------------------------------------------------------
+\section{Experience}
+
+\cventry{\mbox{2022--Present}}{Research Scientist}{Meta}{}{}{
+\begin{itemize}
+\item Build production systems for experiment-metric correctness and ML auditing in large-scale ads experimentation, including a Python reference implementation that independently cross-checks SQL-based metric calculations.
+\item Develop data-quality monitoring and statistical diagnostics, and turn failure analyses into automated safeguards for stale or inconsistent signals, overlapping data slices, and attribution double counting.
+\end{itemize}
+}
+
+\cventry{\mbox{2015--2022}}{Research Assistant}{Reinforcement Learning and Robustness Lab, University of New Hampshire}{}{}{
+\begin{itemize}
+\item Developed scalable algorithms for robust MDPs, percentile-risk criteria, and SVD-based value-function representations under uncertainty; published at NeurIPS 2021, AISTATS 2021, and ICAPS 2019.
+\end{itemize}
+}
+
+%------------------------------------------------------------
+\section{Selected Technical Work}
+
+\cvitem{}{%
+\textbf{Policy Improvement under Imperfect Evaluators (UPI-TRM)}\newline
+\emph{ICLR 2026 Workshop on AI with Recursive Self-Improvement}\newline
+Co-led research on policy improvement with truncated recurrent evaluators and verifier feedback. Derived bounds separating Bellman-residual error from truncation bias and linked evaluator error to conservative policy-improvement guarantees. On hard 4$\times$4 Sudoku, persistent-latent UPI-TRM achieved 57.4\% $\pm$ 12.2\% over 10 seeds versus 32.0\% $\pm$ 15.3\% for TRM+PPO.
+}
+
+\cvitem{}{%
+\textbf{Research-Scale Language-Model Post-Training}\newline
+Built PPO and DPO experiments on small language models for exact-answer arithmetic tasks: generated synthetic prompts and targets, used verifier-style feedback, and evaluated outputs by exact-match accuracy. Research-scale implementation on small models.
+}
+
+%------------------------------------------------------------
+\section{Technical Skills}
+\cvitem{}{\textbf{Programming:} Python, PyTorch.}
+\cvitem{}{\textbf{RL and post-training:} policy gradients, actor-critic methods, hands-on PPO/DPO; working knowledge of GRPO and reward modeling; verifier-style rewards, robust MDPs.}
+\cvitem{}{\textbf{Evaluation:} exact-answer verification, metric correctness, statistical diagnostics, data-quality monitoring, ML auditing, failure analysis.}
+\cvitem{}{\textbf{Robotics:} mobile-robot localization/navigation, partial observability, weak and hand-drawn maps.}
+
+\newpage
+
+%------------------------------------------------------------
+\section{Additional Experience}
+
+\cventry{2018}{AI Engineer Intern}{Envio, Inc.}{Dover, NH}{}{Developed learning-based methods for vehicle routing and scheduling under operational constraints and uncertain execution.}
+
+\cventry{\mbox{2012--2014}}{Research Assistant}{Autonomous Intelligent Systems Lab, University of Freiburg}{Freiburg, Germany}{}{
+\begin{itemize}
+\item Developed mobile-robot localization and navigation algorithms for weak and hand-drawn maps under partial observability.
+\item Research led to publications at IROS 2015 and ECMR 2015 on localization and navigation in hand-drawn maps.
+\end{itemize}
+}
+
+%------------------------------------------------------------
+\section{Selected Publications}
+
+\cvitem{}{%
+Bahram Behzadian, Brett Daley, Gopeshh Subbaraj, Houssam Nassif\newline
+\textbf{Unrolled Policy Iteration for Tiny Recursive Models}\newline
+\emph{ICLR 2026 Workshop on AI with Recursive Self-Improvement}\quad
+\href{https://openreview.net/pdf?id=rIzREKws05}{[Paper]}
+}
+
+\cvitem{}{%
+Bahram Behzadian, Marek Petrik, Chin Pang Ho\newline
+\textbf{Fast Algorithms for $L_\infty$-Constrained S-Rectangular Robust MDPs}\newline
+\emph{NeurIPS 2021}\quad
+\href{https://buiksat.github.io/files/NIPS_2021.pdf}{[Paper]}
+}
+
+\cvitem{}{%
+Bahram Behzadian, Reazul Hasan Russel, Marek Petrik, Chin Pang Ho\newline
+\textbf{Optimizing Percentile Criterion using Robust MDPs}\newline
+\emph{AISTATS 2021}\quad
+\href{https://buiksat.github.io/files/AISTATS_2021.pdf}{[Paper]}
+}
+
+\cvitem{}{%
+Bahram Behzadian, Soheil Gharatappeh, Marek Petrik\newline
+\textbf{Fast Feature Selection for Linear Value Function Approximation}\newline
+\emph{ICAPS 2019}\quad
+\href{https://buiksat.github.io/files/ICAPS_2019.pdf}{[Paper]}
+}
+
+\cvitem{}{%
+Bahram Behzadian, Pratik Agarwal, Wolfram Burgard, Gian Diego Tipaldi\newline
+\textbf{Monte Carlo Localization in Hand-Drawn Maps}\newline
+\emph{IROS 2015}\quad
+\href{https://buiksat.github.io/files/IROS_2015.pdf}{[Paper]}
+}
+
+\cvitem{}{%
+Fabio Boniardi, Bahram Behzadian, Wolfram Burgard, Gian Diego Tipaldi\newline
+\textbf{Robot Navigation in Hand-Drawn Sketched Maps}\newline
+\emph{ECMR 2015}
+}
+
+\cvitem{}{Complete publication list: \href{https://buiksat.github.io/publications.html}{Publications page} \textbar{} \href{https://scholar.google.com/citations?user=Kp27oZ0AAAAJ\&hl=en}{Google Scholar}}
+
+%------------------------------------------------------------
+\section{Education}
+
+\cventry{\mbox{2015--2022}}{Ph.D. in Computer Science}{University of New Hampshire}{}{}{%
+Dissertation: \emph{Efficient Data-Driven Robust Policies for Reinforcement Learning} (advisor: Marek Petrik).\newline
+M.S. in Computer Science awarded en route (2018). Thesis: \emph{Representation Learning for Reinforcement Learning via Singular Value Decomposition}.
+}
+
+\cventry{\mbox{2010--2013}}{M.S. in Machine Automation}{Tampere University}{}{}{Thesis: \emph{Robot Localization under Partial Observability with Weak Maps}}
+
+%------------------------------------------------------------
+\section{Honors and Fellowships}
+\cvitem{}{CEPS Graduate Fellowship, University of New Hampshire\newline
+Thesis and Dissertation Fellowship, Tampere University of Technology}
+
+\end{document}
