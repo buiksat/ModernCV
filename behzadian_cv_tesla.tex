@@ -47,7 +47,7 @@
 
 %------------------------------------------------------------
 \section{Profile}
-Research scientist with a Ph.D. in reinforcement learning and 10+ years across RL, robotics, and production experimentation. Research spans robust decision-making, policy improvement under imperfect evaluators, and verifier-based rewards, with hands-on PPO/DPO experiments on small language models. At Meta, I build production measurement-correctness and ML-auditing systems. Prior mobile-robot localization and navigation research.
+Research scientist with a Ph.D. in reinforcement learning and 10+ years across RL, robotics, and production experimentation. At Meta, I research reinforcement learning with verifiable rewards (RLVR) and build production measurement-correctness and ML-auditing systems. Research spans robust decision-making, policy improvement under imperfect evaluators, and hands-on PPO/DPO experiments on small language models. Earlier research focused on mobile-robot localization and navigation.
 
 %------------------------------------------------------------
 \section{Experience}
@@ -66,18 +66,25 @@ Research scientist with a Ph.D. in reinforcement learning and 10+ years across R
 \end{itemize}
 }
 
+\cventry{\mbox{2012--2014}}{Research Assistant}{Autonomous Intelligent Systems Lab, University of Freiburg}{Freiburg, Germany}{}{
+\begin{itemize}
+\item Developed mobile-robot localization and navigation algorithms for weak and hand-drawn maps under partial observability.
+\item Research led to publications at IROS 2015 and ECMR 2015 on localization and navigation in hand-drawn maps.
+\end{itemize}
+}
+
 %------------------------------------------------------------
 \section{Selected Technical Work}
 
 \cvitem{}{%
 \textbf{Policy Improvement under Imperfect Evaluators (UPI-TRM)}\newline
 \emph{ICLR 2026 Workshop on AI with Recursive Self-Improvement}\newline
-Co-led research on policy improvement with truncated recurrent evaluators and verifier feedback. Derived bounds separating Bellman-residual error from truncation bias and linked evaluator error to conservative policy-improvement guarantees. On hard 4$\times$4 Sudoku, persistent-latent UPI-TRM achieved 57.4\% $\pm$ 12.2\% over 10 seeds versus 32.0\% $\pm$ 15.3\% for TRM+PPO.
+Co-led research on policy improvement under imperfect evaluators, deriving guarantees for recursive reasoning models trained with verifier feedback.
 }
 
 \cvitem{}{%
 \textbf{Research-Scale Language-Model Post-Training}\newline
-Built PPO and DPO experiments on small language models for exact-answer arithmetic tasks: generated synthetic prompts and targets, used verifier-style feedback, and evaluated outputs by exact-match accuracy. Research-scale implementation on small models.
+Built research-scale PPO and DPO experiments on small language models for arithmetic reasoning with verifier feedback.
 }
 
 %------------------------------------------------------------
@@ -93,13 +100,6 @@ Built PPO and DPO experiments on small language models for exact-answer arithmet
 \section{Additional Experience}
 
 \cventry{2018}{AI Engineer Intern}{Envio, Inc.}{Dover, NH}{}{Developed learning-based methods for vehicle routing and scheduling under operational constraints and uncertain execution.}
-
-\cventry{\mbox{2012--2014}}{Research Assistant}{Autonomous Intelligent Systems Lab, University of Freiburg}{Freiburg, Germany}{}{
-\begin{itemize}
-\item Developed mobile-robot localization and navigation algorithms for weak and hand-drawn maps under partial observability.
-\item Research led to publications at IROS 2015 and ECMR 2015 on localization and navigation in hand-drawn maps.
-\end{itemize}
-}
 
 %------------------------------------------------------------
 \section{Selected Publications}
